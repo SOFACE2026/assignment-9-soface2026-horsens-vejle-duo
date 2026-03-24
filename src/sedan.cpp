@@ -9,28 +9,44 @@ Sedan::Sedan() : current_gear(0)
 
 void Sedan::shift_up()
 {
+    //Skift op hvis gear hvis den ikke er 6
+    if (current_gear == -1)
+    current_gear = current_gear + 2;
+    else if (current_gear != 6)
+    current_gear ++;
 }
 
 void Sedan::shift_down()
 {
+    //skifter gear ned hvis den ikke er -1
+    if (current_gear == 1)
+    current_gear = current_gear - 2;
+    else if (current_gear != -1)
+    {
+        current_gear --;
+    }
 }
 
 double Sedan::get_torque(double engine_rpm, double throttle)
 {
-    return 0;
+    //Fuld pedal, fuck poli
+    return throttle * 1400;
 }
 
 double Sedan::get_weight()
 {
-    return 1;
+    //Vi har taget bagsæderne ud for optimering.
+    return 1500;
 }
 
 double Sedan::get_wheel_radius()
 {
-    return 1;
+    //hjul
+    return 0.3;
 }
 
 double Sedan::get_current_gear_ratio()
 {
-    return 1;
+    //Bruger gear_rations array
+    return gear_ratios[current_gear];
 }

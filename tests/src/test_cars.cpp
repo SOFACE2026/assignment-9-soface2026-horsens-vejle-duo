@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch.hpp"
-#include "sedan.hpp"
+#include "../include/catch.hpp"
+#include "../../include/sedan.hpp"
 
 TEST_CASE("Test Cars")
 {
